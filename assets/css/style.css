@@ -803,6 +803,7 @@ background: linear-gradient(33deg, rgba(242,242,255,1) 0%, rgba(235,249,255,1) 1
 /******form section******/
 .form-main-con{
     overflow: hidden;
+    background: var(--light-grey-color);
 }
 .form-main-inner-con h2{
     color: var(--primary-color);
