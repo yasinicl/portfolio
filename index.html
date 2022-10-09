@@ -640,7 +640,7 @@
             </div>
          </div>
       </section>
-      <!-- blog section -->
+       blog section -->
       <!-- form section -->
       <section class="w-100 float-left form-main-con padding-top padding-bottom" id="Contact">
          <div class="container">
@@ -695,7 +695,7 @@
                 
                      </div>
                      
-                    <form id= "contactpage" onsubmit="sendemail()"  class="contact-form wow slideInRight text-lg-left text-center" >
+                    <form id= "contactpage" onsubmit="sendemail(); reset(); return false;"  class="contact-form wow slideInRight text-lg-left text-center" >
                        <div class="row">
                           <div class="col-lg-6 col-md-6">
                              <div class="form-group mb-0">    
@@ -704,7 +704,7 @@
                           </div>
                           <div class="col-lg-6 col-md-6">
                              <div class="form-group mb-0">
-                                <input type="email" id="emailHelp" name="emailHelp" placeholder="Email" autocomplete="off" required>
+                                <input type="email" id="email" name="emailHelp" placeholder="Email" autocomplete="off" required>
                                 <small class="form-text text-muted"></small>
                              </div>
                           </div>
@@ -1326,9 +1326,14 @@
     Username : "yasin_icl@yahoo.com",
     Password : "1E29D32E58038FDD425AF7ACB63655AC47A5",
     To : 'yasin_icl@yahoo.com',
-    From : "xample@gmail.com",
-    Subject : "This is the subject",
-    Body : "hello i am user"
+    From : document.getElementById("email").value,
+    Subject : document.getElementById("subject").value,
+    Body : "Name:" + document.getElementById("name").value
+         + "<br> Email: "+ document.getElementById("email").value
+         + "<br> Phone No : "+ document.getElementById("phone").value
+         + "<br> Message : "+ document.getElementById("comments").value
+
+
     
 }).then(
   message => alert(message)
